@@ -1,0 +1,26 @@
+name: Commit Notification
+
+on:
+  push:
+    branches:
+      - main  # or specify the branch you want to monitor
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Send Email
+        uses: akshayreddy2196@gmail.com
+        with:
+          server_address: smtp.example.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: 'New Commit Notification'
+          body: 'A new commit has been pushed to the repository.'
+          to: recipient@example.com
+          from: sender@example.com
