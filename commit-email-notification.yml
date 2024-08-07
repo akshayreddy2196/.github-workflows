@@ -16,11 +16,11 @@ jobs:
       - name: Send Email
         uses: akshayreddy2196@gmail.com
         with:
-          server_address: smtp.example.com
+          server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: 'New Commit Notification'
           body: 'A new commit has been pushed to the repository.'
-          to: recipient@example.com
-          from: sender@example.com
+          to: akshayhl.brigosha.com
+          from: akshayreddy2196@gmail.com
